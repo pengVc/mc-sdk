@@ -193,18 +193,25 @@ Callback Data:
 
 	无
 
+<br>
 
 ### 4. Example
 
-	(function(MCK){
+```javascript
+(function(MCK){
 
-		MCK.ready(MCReady);
+	MCK.ready(MCReady);
 
-		function MCReady(sdk){
-			sdk.h5.call("getUserInfo", function(userData){
-				// userData 为APP中传入的 用户数据
-				console.log(JSON.stringify(userData));
-			});
-		}
+	function MCReady(sdk){
 
-	})(window.MCK);
+		// 这里 sdk 即是 MCK
+		// MCK === sdk
+
+		sdk.h5.call("getUserInfo", function(userData){
+			// userData 为APP中传入的 用户数据
+			console.log(JSON.stringify(userData));
+		});
+	}
+
+})(window.MCK);
+```
