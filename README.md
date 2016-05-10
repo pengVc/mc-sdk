@@ -28,7 +28,7 @@ sdk地址: [http://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=LIMC0001](htt
 
 #### 2.1 命名空间
 
-移动校园sdk, 仅在全局扩展 MCK 的命名空间.
+移动校园sdk, 仅在全局扩展 `MCK` 的命名空间.
 
 
 #### 2.2 验证回调
