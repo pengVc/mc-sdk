@@ -95,12 +95,28 @@ Parameters:
 Callback Data:
 
 	{
-	  userName: 用户名,
-	  userId: 学号,
-	  realName: 真实姓名,
-	  sex: 性别,
-	  role: 角色
+	  userName: "用户名",
+	  userId: "学号",
+	  realName: "真实姓名",
+	  sex: "性别" ,
+	  role: "角色",
+	  profile: "头像地址"
 	}
+
+性别(sex):
+
+* 1 为男,
+* 2 为女
+* 3 为未知
+
+角色(role):
+
+* 1: "学生",
+* 2: "教职工",
+* 3: "研究生",
+* 4: "软件供应商",
+* 9: "游客"
+
 
 <br>
 
