@@ -11,6 +11,7 @@
 	* [验证回调](#setup2_2)
 	* [调用API](#setup2_3)
 * [API列表](#apiList)
+* [示例](#example)
 
 
 ### 1. 安装
@@ -105,16 +106,16 @@ Callback Data:
 
 性别(sex):
 
-* 1 为男,
+* 1 为男
 * 2 为女
 * 3 为未知
 
 角色(role):
 
-* 1: "学生",
-* 2: "教职工",
-* 3: "研究生",
-* 4: "软件供应商",
+* 1: "学生"
+* 2: "教职工"
+* 3: "研究生"
+* 4: "软件供应商"
 * 9: "游客"
 
 
@@ -160,3 +161,50 @@ Callback Data:
 		status: statusCode
     }
 
+<br>
+
+__3.4 注销登录__
+
+	MCK.h5.call("logout");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+Callback Data:
+
+	无
+
+<br>
+
+__3.5 退出应用__
+
+	MCK.h5.call("exitApp");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+Callback Data:
+
+	无
+
+
+### 4. Example
+
+	(function(MCK){
+
+		MCK.ready(MCReady);
+
+		function MCReady(sdk){
+			sdk.h5.call("getUserInfo", function(userData){
+				// userData 为APP中传入的 用户数据
+				console.log(JSON.stringify(userData));
+			});
+		}
+
+	})(window.MCK);
