@@ -1,0 +1,28 @@
+body {
+	line-height: 1.6;
+}
+
+.none {
+	display: none;
+}
+
+.s-hd {
+	font-size: 16px;
+	text-align: center;
+	padding: 1em 0;
+	border-bottom: 1px solid #ccc;
+}
+
+.s-hd-tie {
+	margin: 0;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.s-bd {
+	padding: 10px;
+}
+
+.s-bd .btn {
+	margin: 15px 0;
+}

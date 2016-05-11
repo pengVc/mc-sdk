@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<title>嵌入 移动校园 站点</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<meta http-equiv="Content-Security-Policy"
+	      content="default-src *; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; frame-src *; media-src *">
+
+	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="misc/_site.css" />
+
+	<!--<script src="../mc_kit_sdk.js?appkey=000545"></script>-->
+	<script src="mc_kit_sdk.min.js?appkey=000545"></script>
+
+</head>
+<body>
+
+	<div class="s-hd">
+		<small> hello~~~ </small>
+		<h1 class="text-center s-hd-tie">
+			Mobile Campus Kits
+		</h1>
+	</div>
+
+	<div class="s-bd">
+
+		<button class="btn btn-block btn-default j_getApi">获取可用 API</button>
+
+		<button class="btn btn-block btn-default j_getUser">获取用户数据</button>
+
+		<button class="btn btn-block btn-default j_tackPhoto">Take a Photo</button>
+
+		<button class="btn btn-block btn-default j_pickPhoto">Pick a Picture</button>
+
+		<button class="btn btn-block btn-default j_share">Go Share</button>
+
+		<button class="btn btn-block btn-default j_dev">Developer Info</button>
+
+		<strong>Results:</strong>
+
+		<div>
+
+			<p class="j_results j_results_message none"></p>
+			<img class="j_results j_results_photo none img-responsive" src="" alt="" />
+
+		</div>
+
+	</div>
+
+	<script src="lib/jQuery/jquery-1.11.2.min.js"></script>
+
+	<script src="misc/_site.js?v=3"></script>
+
+</body>
+</html>
