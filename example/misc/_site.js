@@ -8,10 +8,14 @@
 
 	function MCReady(sdk){
 
-		var $results;
+		var
+			$results,
+			$onElem
+		;
+
 		$results = $(".j_results").hide();
 
-		$(".s-bd")
+		$onElem = $(".s-bd")
 
 			.on("click", ".j_getApi", function(){
 
@@ -103,6 +107,47 @@
 				});
 
 			})
+
+			.on("click", ".j_navbar_title", function(){
+				$results.hide();
+				sdk.h5.call("setNavBarTitle", "当前读秒" + (new Date).getSeconds());
+			})
+
+			.on("click", ".j_navbar_clear", function(){
+				$results.hide();
+				sdk.h5.call("clearNavBarMainBtn");
+			})
+		;
+
+		var
+			actionToolFlag = "tool"
+		;
+
+		$onElem
+			.on("click", ".j_navbar_add", function(){
+				$results.hide();
+				sdk.h5.call("clearNavBarMainBtn", {
+					name   : "工具",
+					flag   : actionToolFlag,
+					iconSrc: "http://mobilecampus.oss.aliyuncs.com/discover/MC_136/zsvJzM7Ox87Mx8vGzP.png"
+				}, function(){
+					$(".j_results_message")
+						.show()
+						.text("你点击了 navigation _ " + (new Date).getTime())
+					;
+				});
+			})
+
+			.on("click", ".j_navbar_del", function(){
+				$results.hide();
+				sdk.h5.call("delNavBarMainBtn", actionToolFlag);
+			})
+
+			.on("click", ".j_navbar_clear", function(){
+				$results.hide();
+				sdk.h5.call("clearNavBarMainBtn");
+			})
+
 		;
 
 	}
