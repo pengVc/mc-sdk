@@ -9,13 +9,11 @@
 	function MCReady(sdk){
 
 		var
-			$results,
-			$onElem
+			$results = $(".j_results").hide(),
+			$onElem = $(".s-bd")
 		;
 
-		$results = $(".j_results").hide();
-
-		$onElem = $(".s-bd")
+		$onElem
 
 			.on("click", ".j_getApi", function(){
 
@@ -108,15 +106,6 @@
 
 			})
 
-			.on("click", ".j_navbar_title", function(){
-				$results.hide();
-				sdk.h5.call("setNavBarTitle", "当前读秒" + (new Date).getSeconds());
-			})
-
-			.on("click", ".j_navbar_clear", function(){
-				$results.hide();
-				sdk.h5.call("clearNavBarMainBtn");
-			})
 		;
 
 		var
@@ -124,9 +113,15 @@
 		;
 
 		$onElem
+
+			.on("click", ".j_navbar_title", function(){
+				$results.hide();
+				sdk.h5.call("setNavBarTitle", "当前读秒" + (new Date).getSeconds());
+			})
+
 			.on("click", ".j_navbar_add", function(){
 				$results.hide();
-				sdk.h5.call("clearNavBarMainBtn", {
+				sdk.h5.call("addNavBarMainBtn", {
 					name   : "工具",
 					flag   : actionToolFlag,
 					iconSrc: "http://mobilecampus.oss.aliyuncs.com/discover/MC_136/zsvJzM7Ox87Mx8vGzP.png"
