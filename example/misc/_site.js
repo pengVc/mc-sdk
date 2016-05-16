@@ -124,7 +124,7 @@
 				sdk.h5.call("addNavBarMainBtn", {
 					name   : "工具",
 					flag   : actionToolFlag,
-					iconSrc: "http://mobilecampus.oss.aliyuncs.com/discover/MC_136/zsvJzM7Ox87Mx8vGzP.png"
+					iconSrc: "http://mobilecampus.oss.aliyuncs.com/discover/MC_136/zsQJzMzIyMnOyczMyw.png"
 				}, function(){
 					$(".j_results_message")
 						.show()
