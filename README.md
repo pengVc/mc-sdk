@@ -49,7 +49,7 @@ Tips:
 
 #### 2.3 调用API
 
-__SDK 相关 API:__
+#### 2.3.1 SDK 相关 API:
 
 | 方法 | 描述   |
 | ------------- | ------------- |
@@ -59,17 +59,33 @@ __SDK 相关 API:__
 
 <br>
 
-__H5 相关 API:__
+#### 2.3.2 H5 相关 API
+
+__返回可调用的所有方法的数组:__
 
 	MCK.h5.getApi();
-
-返回可调用的所有方法的数组.
 
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
 | 无 | - | - |
 
+Callback Data: `Array`
+
+	[
+		"GETUSERINFO",
+		"TAKEPHOTO",
+		"PICKPHOTO",
+		"TAKEORPICKPHOTO",
+		"PICKPICTURES",
+		"LOGOUT",
+		"EXITAPP",
+		"SHARE",
+		 //..
+	]
+
 <br>
+
+__调用API:__
 
 	MCK.h5.call(apiName, data, callback);
 
@@ -93,7 +109,7 @@ Parameters:
 | ------------- | ------------- | ------------- |
 | 无 | - | - |
 
-Callback Data:
+Callback Data: `Object`
 
 	{
 	  userName: "用户名",
