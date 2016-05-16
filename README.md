@@ -10,8 +10,8 @@
 	* [命名空间](#setup2_1)
 	* [验证回调](#setup2_2)
 	* [调用API](#setup2_3)
-* [API列表](#apiList)
-* [示例](#example)
+* [API列表](#3-api-list)
+* [示例](#4-example)
 
 
 ### 1. 安装
@@ -91,7 +91,7 @@ __调用API:__
 
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
-| apiName | string | API名称, 调用移动校园提供的 API, 看 [API LIST](#apiList) |
+| apiName | string | API名称, 调用移动校园提供的 API, 看 [API LIST](#3-api-list) |
 | data | * | 接口参数 |
 | callback | function | 回调函数 |
 
