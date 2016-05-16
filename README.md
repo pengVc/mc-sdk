@@ -150,7 +150,7 @@ Parameters:
 | config.targetHeight | Number | 图片高度 |
 | config.quality | Number | 图片压缩比例(0-100) |
 
-Callback Data:
+Callback Data: `String`
 
 	图片base64编码
 
@@ -169,7 +169,7 @@ Parameters:
 | config.imgSrc | String | 分享的图片 |
 | config.url | String | 分享后可访问链接 |
 
-Callback Data:
+Callback Data: `Object`
 
 	{
 		// statusCode 可选值为: 1 || 0
