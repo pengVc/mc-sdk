@@ -211,6 +211,57 @@ Callback Data:
 
 <br>
 
+__3.6 设置 NavigationBar 名称__
+
+	MCK.h5.call("setNavBarTitle", title);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| title | String | navBar 名称 |
+
+<br>
+
+__3.7.1 添加 NavigationBar 右侧按钮__
+
+	sdk.h5.call("addNavBarMainBtn", config, listener);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| config.name | String | ( 按钮名称 ) |
+| config.flag | String | 按钮标识( 可用做删除 ) |
+| config.iconSrc | String | 按钮的图标( 可接受 url, 或 base64 ) |
+| listener | Function | 按钮被点击的回调 |
+
+<br>
+
+__3.7.2 删除 NavigationBar 右侧按钮__
+
+	sdk.h5.call("delNavBarMainBtn", flag);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| flag | String | ( 按钮标识 ) |
+
+<br>
+
+__3.7.3 清空 NavigationBar 右侧按钮__
+
+	sdk.h5.call("clearNavBarMainBtn");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+<br>
+
 ### 4. Example
 
 ```javascript
