@@ -20,7 +20,9 @@
 
 ![示例](src/img/setup_snap.png)
 
-sdk_1.0.6: [mc_kit_sdk_1.0.5.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.6.min.js?appkey=LIMC0001 "MC-SDK_1.0.6")
+sdk_1.0.7: [mc_kit_sdk_1.0.7.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.7.min.js?appkey=LIMC0001 "MC-SDK_1.0.7")
+
+sdk_1.0.6: [mc_kit_sdk_1.0.6.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.6.min.js?appkey=LIMC0001 "MC-SDK_1.0.6")
 
 sdk_1.0.5: [mc_kit_sdk_1.0.5.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.5.min.js?appkey=LIMC0001 "MC-SDK_1.0.5")
 
