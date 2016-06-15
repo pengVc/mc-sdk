@@ -117,8 +117,7 @@ Parameters:
 Callback Data: `Object`
 
 	{
-	  userName: "用户名",
-	  userId: "学号",
+	  userName: "用户名(学号)",
 	  realName: "真实姓名",
 	  sex: "性别" ,
 	  role: "角色",
