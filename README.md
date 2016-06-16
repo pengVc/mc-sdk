@@ -266,6 +266,18 @@ Parameters:
 
 <br>
 
+__3.8 调用拨号__
+
+	sdk.h5.call("callDial", telNumber);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| telNumber | Number | 拨号号码 |
+
+<br>
+
 ### 4. Example
 
 ```javascript
