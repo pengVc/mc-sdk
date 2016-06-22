@@ -279,7 +279,7 @@ Parameters:
 
 <br>
 
-__3.8.1 显示 "加载中"状态 模态图标__
+__3.9.1 显示 "加载中"状态 模态图标__
 
 	sdk.h5.call("progressBar.show");
 
@@ -291,7 +291,7 @@ Parameters:
 
 <br>
 
-__3.8.2 隐藏 "加载中"状态 模态图标__
+__3.9.2 隐藏 "加载中"状态 模态图标__
 
 	sdk.h5.call("progressBar.hide");
 
@@ -303,7 +303,7 @@ Parameters:
 
 <br>
 
-__3.9 全屏浏览大图__
+__3.10 全屏浏览大图__
 
 	MCK.h5.call("viewFullImg", imgSrc);
 

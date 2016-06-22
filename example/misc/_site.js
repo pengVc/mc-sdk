@@ -106,6 +106,24 @@
 
 			})
 
+			.on("click", ".j_show_loading", function() {
+				$results.hide();
+
+				sdk.h5.call("progressBar.show");
+			})
+
+			.on("click", ".j_hide_loading", function() {
+				$results.hide();
+
+				sdk.h5.call("progressBar.hide");
+			})
+
+			.on("click", ".j_view_full_img", function() {
+				$results.hide();
+
+				sdk.h5.call("viewFullImg", "http://mobilecampus.oss.aliyuncs.com/discovery/lantu/zsvKzMz2ODgGzjbyzA.png");
+			})
+
 		;
 
 		var
