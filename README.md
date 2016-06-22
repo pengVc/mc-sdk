@@ -117,6 +117,7 @@ Parameters:
 Callback Data: `Object`
 
 	{
+	  userId："用户id",
 	  userName: "用户名(学号)",
 	  realName: "真实姓名",
 	  sex: "性别" ,
@@ -275,6 +276,42 @@ Parameters:
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
 | telNumber | Number | 拨号号码 |
+
+<br>
+
+__3.8.1 显示 "加载中"状态 模态图标__
+
+	sdk.h5.call("progressBar.show");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+<br>
+
+__3.8.2 隐藏 "加载中"状态 模态图标__
+
+	sdk.h5.call("progressBar.hide");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+<br>
+
+__3.9 全屏浏览大图__
+
+	MCK.h5.call("viewFullImg", imgSrc);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| imgSrc | String | 图片地址 |
 
 <br>
 
