@@ -122,7 +122,8 @@ Callback Data: `Object`
 	  realName: "真实姓名",
 	  sex: "性别" ,
 	  role: "角色",
-	  profile: "头像地址"
+	  profile: "头像地址",
+	  campusFlag: "唯一校园标识"
 	}
 
 性别(sex):
