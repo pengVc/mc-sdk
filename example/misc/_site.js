@@ -167,7 +167,7 @@
 
 			.on("click", ".j_navbar_sdkCallTel", function(){
 				$results.hide();
-				sdk.h5.call("callTel", 13800138000);
+				sdk.h5.call("callDial", 13800138000);
 			})
 		;
 
