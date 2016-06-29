@@ -171,6 +171,71 @@
 			})
 		;
 
+		$onElem
+
+			.on("click", ".j_confirm", function() {
+				$results.hide();
+				sdk.h5.call("popup.confirm", {
+					msg: "还是要学习一个",
+					title: "提醒一下",
+					buttons: ["学习","不学习"]
+				}, function(state) {
+					var hasStudy = state === "resolve";
+
+					$(".j_results_message")
+						.show()
+						.text(hasStudy ? "你学习了一个" : "你没有学习")
+					;
+				});
+			})
+
+			.on("click", ".j_alert", function() {
+				$results.hide();
+				sdk.h5.call("popup.alert", {
+					msg: "必须学习一个",
+					title: "警告",
+					buttonName:"被迫学习"
+				}, function() {
+					$(".j_results_message")
+						.show()
+						.text("你被迫学习了一个");
+					;
+				})
+			})
+
+			.on("click", ".j_prompt", function() {
+				$results.hide();
+				sdk.h5.call("popup.prompt", {
+					msg: "续几秒？",
+					title: "续么",
+					buttons: ["续", "不续"],
+					defaultText: "1"
+				}, function(onf) {
+					var text;
+
+					if (onf.state === "resolve") {
+						text = "你续了" + onf.text + "秒";
+					} else {
+						text = "你没有续";
+					}
+
+					$(".j_results_message")
+						.show()
+						.text(text);
+					;
+				})
+			})
+
+			.on("click", ".j_toastAlert", function() {
+				$results.hide();
+				sdk.h5.call("popup.toastAlert", {
+					message: "膜法师你好",
+					duration: "long",
+					position: "center"
+				})
+			})
+		;
+
 	}
 
 	function objectStyle(devInfo){
