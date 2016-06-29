@@ -316,6 +316,52 @@ Parameters:
 
 <br>
 
+__3.11.1 显示confirm框__
+
+	MCK.h5.call("popup.confirm", config, listener);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| config.msg | String | 描述内容 |
+| config.title | String | 对话框标题( 默认为"确认" ) |
+| listener | Function | 按钮被点击的回调 |
+
+Callback Data: `String`
+
+	//"resolve" 点击确认按钮后触发
+	//"reject"  点击取消按钮后触发
+
+<br>
+
+__3.11.2 显示alert框__
+
+	MCK.h5.call("popup.alter", config, listener);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| config.msg | String | 描述内容 |
+| config.title | String | 对话框标题( 默认为"提示" ) |
+| listener | Function | 按钮被点击的回调 |
+
+<br>
+
+__3.11.3 显示toastAlert框__
+
+	MCK.h5.call("popup.toastAltert", config);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| config.message | String | 显示文字 |
+| config.duration | String |  "short","long" 弹框显示时间( 默认为"long" ) |
+
+<br>
+
 ### 4. Example
 
 ```javascript
