@@ -26,7 +26,7 @@ sdk_1.0.6: [mc_kit_sdk_1.0.6.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.
 
 sdk_1.0.5: [mc_kit_sdk_1.0.5.min.js](http://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.5.min.js?appkey=LIMC0001 "MC-SDK_1.0.5")
 
-sdk_最新版: [http://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=LIMC0001](http://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=LIMC0001 "MC-SDK 最新版")
+sdk_最新版: [http://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=<yourAppKey>](http://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=<yourAppKey> "MC-SDK 最新版")
 
 ### 2. 使用
 
@@ -351,7 +351,7 @@ Parameters:
 
 __3.11.3 显示toastAlert框__
 
-	MCK.h5.call("popup.toastAltert", config);
+	MCK.h5.call("popup.toastAlert", config);
 
 Parameters:
 
@@ -359,6 +359,18 @@ Parameters:
 | ------------- | ------------- | ------------- |
 | config.message | String | 显示文字 |
 | config.duration | String |  "short","long" 弹框显示时间( 默认为"long" ) |
+
+<br>
+
+__3.12 关闭键盘__
+
+	MCK.h5.call("closeKeyboard");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
 
 <br>
 
