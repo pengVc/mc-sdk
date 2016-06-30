@@ -1,28 +1,81 @@
-body {
+html {
 	line-height: 1.6;
+	font-size: 100px;
 }
 
 .none {
 	display: none;
 }
 
+.scroll-y {
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
 .s-hd {
-	font-size: 16px;
 	text-align: center;
-	padding: 1em 0;
+	padding: 0.06rem 0;
+	margin: 0 0.06rem;
 	border-bottom: 1px solid #ccc;
 }
 
 .s-hd-tie {
+	font-size: 0.22rem;
+	line-height: 1.6;
 	margin: 0;
 	font-weight: bold;
-	font-size: 26px;
 }
 
 .s-bd {
-	padding: 10px;
+	position: absolute;
+	top: 0.50rem;
+	bottom: 0;
+	left: 0;
+	right: 0;
+
+	padding: 0.05rem;
 }
 
-.s-bd .btn {
-	margin: 15px 0;
+.r-box {
+	box-shadow: 0 0 5px #928c8c inset;
+}
+
+.s-main {
+	height: 66%;
+}
+
+.s-main {
+	position: relative;
+
+}
+
+.s-main-view,
+.s-sub-view {
+	position: absolute;
+	top: 0.05rem;
+	bottom: 0.05rem;
+	left: 0.05rem;
+	right: 0.05rem;
+}
+
+.s-main-view {
+
+}
+
+.s-main-view .btn {
+	margin: 0.05rem 0;
+}
+
+.s-main-view hr {
+	margin: 0.06rem 0;
+}
+
+.s-sub {
+	height: 26%;
+	position: relative;
+}
+
+
+.s-result {
+	margin: 0.1rem 0;
 }
