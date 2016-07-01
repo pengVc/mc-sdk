@@ -170,7 +170,7 @@
 				sdk.h5.call("callDial", 13800138000);
 			})
 
-			.on("click", "j_closeKeyboard", function(){
+			.on("click", ".j_closeKeyboard", function(){
 				$results.hide();
 				sdk.h5.call("closeKeyboard");
 			})
@@ -236,7 +236,7 @@
 				sdk.h5.call("popup.toastAlert", {
 					message: "膜法师你好",
 					duration: "long",
-					position: "center"
+					position: "bottom"
 				})
 			})
 		;
