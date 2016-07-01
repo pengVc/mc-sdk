@@ -374,6 +374,18 @@ Parameters:
 
 <br>
 
+__3.13 关闭集成界面__
+
+	MCK.h5.call("closeSelf");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+<br>
+
 ### 4. Example
 
 ```javascript
