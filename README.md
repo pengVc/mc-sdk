@@ -152,8 +152,8 @@ Parameters:
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
 | config.allowEdit | Boolean | 是否允许编辑 |
-| config.targetWidth | Number | 图片宽度 |
-| config.targetHeight | Number | 图片高度 |
+| config.width | Number | 图片宽度 |
+| config.height | Number | 图片高度 |
 | config.quality | Number | 图片压缩比例(0-100) |
 
 Callback Data: `String`
