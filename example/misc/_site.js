@@ -174,6 +174,11 @@
 				$results.hide();
 				sdk.h5.call("closeKeyboard");
 			})
+
+			.on("click", ".j_closeSelf", function(){
+				$results.hide();
+				sdk.h5.call("closeSelf");
+			})
 		;
 
 		$onElem
