@@ -169,6 +169,11 @@
 				$results.hide();
 				sdk.h5.call("callDial", 13800138000);
 			})
+
+			.on("click", "j_closeKeyboard", function(){
+				$results.hide();
+				sdk.h5.call("closeKeyboard");
+			})
 		;
 
 		$onElem
