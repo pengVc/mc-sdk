@@ -217,7 +217,7 @@ Callback Data:
 
 <br>
 
-__3.6 设置 NavigationBar 名称__
+__3.6.1 设置 NavigationBar 名称__
 
 	MCK.h5.call("setNavBarTitle", title);
 
@@ -226,6 +226,44 @@ Parameters:
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
 | title | String | navBar 名称 |
+
+<br>
+
+__3.6.2 添加 NavigationBar Title Item__
+
+	MCK.h5.call("addNavBarTitleList", config, listener);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| config.name | String | ( 按钮名称 ) |
+| config.flag | String | 按钮标识( 可用做删除 ) |
+| listener | Function | 按钮被点击的回调 |
+
+<br>
+
+__3.6.3 删除 NavigationBar Title Item__
+
+	MCK.h5.call("delNavBarTitleList", flag);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| flag | String | ( 按钮标识 ) |
+
+<br>
+
+__3.6.4 清空 NavigationBar Title LIST__
+
+	MCK.h5.call("clearNavBarTitleList");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
 
 <br>
 
