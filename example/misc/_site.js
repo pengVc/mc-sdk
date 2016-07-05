@@ -127,7 +127,8 @@
 		;
 
 		var
-			actionToolFlag = "tool"
+			actionToolFlag = "tool",
+			actionTitleFlag = "toolTittle"
 		;
 
 		$onElem
@@ -137,6 +138,39 @@
 				sdk.h5.call("setNavBarTitle", "当前读秒" + (new Date).getSeconds());
 			})
 
+			.on("click", ".j_navbar_titleList_add", function(){
+				$results.hide();
+
+				sdk.h5.call("clearNavBarTitleList");
+
+				Array.apply(null, Array(5)).forEach(function(item, index){
+
+					sdk.h5.call("addNavBarTitleList", {
+						name   : "点我-" + index,
+						flag   : actionTitleFlag
+					}, function(index){
+						$(".j_results_message")
+							.show()
+							.text("你点击了 [" + "点我做什么-" + index + "]")
+						;
+					});
+				});
+
+			})
+
+			.on("click", ".j_navbar_titleList_del", function(){
+				$results.hide();
+				sdk.h5.call("delNavBarTitleList", actionTitleFlag);
+			})
+
+			.on("click", ".j_navbar_titleList_clear", function(){
+				$results.hide();
+				sdk.h5.call("clearNavBarTitleList");
+				sdk.h5.call("setNavBarTitle", "MC SDK");
+			})
+		;
+		
+		$onElem
 			.on("click", ".j_navbar_add", function(){
 				$results.hide();
 				sdk.h5.call("addNavBarMainBtn", {
