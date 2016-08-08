@@ -169,7 +169,7 @@
 				sdk.h5.call("setNavBarTitle", "MC SDK");
 			})
 		;
-		
+
 		$onElem
 			.on("click", ".j_navbar_add", function(){
 				$results.hide();
@@ -202,6 +202,33 @@
 			.on("click", ".j_navbar_sdkCallTel", function(){
 				$results.hide();
 				sdk.h5.call("callDial", 13800138000);
+			})
+
+			.on("click", ".j_scan", function() {
+				$results.hide();
+				sdk.h5.call("scan", function(msg) {
+
+					var
+						result,
+						error
+					;
+
+					if (msg.status === 1) {
+						result = msg.result;
+						$(".j_results_message")
+							.show()
+							.text("Result: " + result.text + "\n" +
+							      "Format: " + result.format + "\n" +
+							      "Cancelled: " + result.cancelled)
+						;
+					} else {
+						error = msg.error;
+						$(".j_results_message")
+							.show()
+							.text("Error: " + error)
+						;
+					}
+				});
 			})
 
 			.on("click", ".j_closeKeyboard", function(){

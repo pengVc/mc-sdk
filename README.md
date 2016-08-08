@@ -318,7 +318,34 @@ Parameters:
 
 <br>
 
-__3.9.1 显示 "加载中"状态 模态图标__
+__3.9 调用扫描二维码__
+
+	MCK.h5.call("scan", callback);
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+Callback Data: `Object`
+
+	{
+		// status 可选值为: 1 || 0
+		// 1为扫描成功, 0 为扫描失败
+		// result 扫描成功后返回结果
+		// result.text 扫描结果
+		// result.format 扫描结果格式(如：二维码为QR_CODE)
+		// result.cancelled 是否取消 可选值为 1 || 0
+		// 1为已取消, 0为未取消
+		status: status,
+		result: result,
+		error: error
+    }
+
+<br>
+
+__3.10.1 显示 "加载中"状态 模态图标__
 
 	sdk.h5.call("progressBar.show");
 
@@ -330,7 +357,7 @@ Parameters:
 
 <br>
 
-__3.9.2 隐藏 "加载中"状态 模态图标__
+__3.10.2 隐藏 "加载中"状态 模态图标__
 
 	sdk.h5.call("progressBar.hide");
 
@@ -342,7 +369,7 @@ Parameters:
 
 <br>
 
-__3.10 全屏浏览大图__
+__3.11 全屏浏览大图__
 
 	MCK.h5.call("viewFullImg", imgSrc);
 
@@ -354,7 +381,7 @@ Parameters:
 
 <br>
 
-__3.11.1 显示confirm框__
+__3.12.1 显示confirm框__
 
 	MCK.h5.call("popup.confirm", config, listener);
 
@@ -373,7 +400,7 @@ Callback Data: `String`
 
 <br>
 
-__3.11.2 显示alert框__
+__3.12.2 显示alert框__
 
 	MCK.h5.call("popup.alter", config, listener);
 
@@ -387,7 +414,7 @@ Parameters:
 
 <br>
 
-__3.11.3 显示toastAlert框__
+__3.12.3 显示toastAlert框__
 
 	MCK.h5.call("popup.toastAlert", config);
 
@@ -400,7 +427,7 @@ Parameters:
 
 <br>
 
-__3.12 关闭键盘__
+__3.13 关闭键盘__
 
 	MCK.h5.call("closeKeyboard");
 
@@ -412,7 +439,7 @@ Parameters:
 
 <br>
 
-__3.13 关闭集成界面__
+__3.14 关闭集成界面__
 
 	MCK.h5.call("closeSelf");
 
