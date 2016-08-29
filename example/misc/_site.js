@@ -307,6 +307,33 @@
 			})
 		;
 
+		$onElem
+
+			.on("click", ".j_width", function() {
+				var
+					body,
+					clientWidth,
+					offsetWidth,
+					scrollWidth
+				;
+
+				$results.hide();
+
+				body = document.querySelector("body");
+				clientWidth = body.clientWidth;
+				offsetWidth = body.offsetWidth;
+				scrollWidth = body.scrollWidth;
+
+				$(".j_results_message")
+					.show()
+					.text("clientWidth: " + clientWidth + "px" + "\r\n" +
+					      "offsetWidth: " + offsetWidth + "px" + "\r\n" +
+					      "scrollWidth: " + scrollWidth + "px")
+				;
+
+			})
+		;
+
 	}
 
 	function objectStyle(devInfo){
