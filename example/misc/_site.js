@@ -43,6 +43,20 @@
 
 			})
 
+			.on("click", ".j_getUserToken", function () {
+				$results.hide();
+
+				// 调用  获取用户信息
+				sdk.h5.call("getUserToken", function(userToken){
+					// userData 为APP中传入的 用户数据
+
+					$(".j_results_message")
+						.show()
+						.text(objectStyle(userToken))
+					;
+				});
+			})
+
 			.on("click", ".j_tackPhoto", function(){
 
 				$results.hide();

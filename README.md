@@ -104,7 +104,7 @@ __调用API:__
 
 ### 3. API LIST
 
-__3.1 获取用户基本信息__
+__3.1.1 获取用户基本信息__
 
 	MCK.h5.call("getUserInfo");
 
@@ -142,6 +142,27 @@ Callback Data: `Object`
 
 
 <br>
+
+__3.1.2 获取用户token__
+
+	MCK.h5.call("getUserToken");
+
+Parameters:
+
+| 参数 | 类型 | 描述   |
+| ------------- | ------------- | ------------- |
+| 无 | - | - |
+
+Callback Data: `String`
+
+	{
+	  token: "用户token"
+	}
+
+<br>
+
+
+
 
 __3.2 调用相机或通过相册选择照片__
 
