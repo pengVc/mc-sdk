@@ -323,7 +323,7 @@
 
 		$onElem
 
-			.on("click", ".j_width", function() {
+			.on("click", ".j_getOffsetSize", function() {
 				var
 					body,
 					clientWidth,
@@ -343,6 +343,14 @@
 					.text("clientWidth: " + clientWidth + "px" + "\r\n" +
 					      "offsetWidth: " + offsetWidth + "px" + "\r\n" +
 					      "scrollWidth: " + scrollWidth + "px")
+				;
+
+			})
+
+			.on("click", ".j_getUserAgent", function() {
+				$(".j_results_message")
+					.show()
+					.text(navigator.userAgent)
 				;
 
 			})
