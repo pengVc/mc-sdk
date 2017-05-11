@@ -11,6 +11,35 @@
 	* [验证回调](#2-2-验证回调)
 	* [调用API](#2-3-调用api)
 * [API列表](#3-api-list)
+	* [获取用户基本信息](#3-1-1-获取用户基本信息)
+	* [获取用户token](#3-1-2-获取用户token)
+	* [调用相机或通过相册选择照片](#3-2-调用相机或通过相册选择照片)
+	* [调用三方分享](#3-3-调用三方分享)
+	* [注销登录](#3-4-注销登录)
+	* [退出应用](#3-5-退出应用)
+	* 操作 NavigationBar Title
+		* [设置 NavigationBar 名称](#3-6-1-设置-navigationbar-名称)
+		* [添加 NavigationBar Title Item](#3-6-2-添加-navigationbar-title-item)
+		* [删除 NavigationBar Title Item](#3-6-3-删除-navigationbar-title-item)
+		* [清空 NavigationBar Title LIST](#3-6-4-清空-navigationbar-title-lIST)
+	* 操作 NavigationBar 右侧按钮
+		* [添加 NavigationBar 右侧按钮](#3-7-1-添加-navigationbar-右侧按钮)
+		* [删除 NavigationBar 右侧按钮](#3-7-2-删除-navigationbar-右侧按钮)
+		* [清空 NavigationBar 右侧按钮](#3-7-3-清空-navigationbar-右侧按钮)
+	* [调用拨号](#3-8-调用拨号)
+	* [调用扫描二维码](#3-9-调用扫描二维码)
+	* Loading spinner( 加载动态图标 )
+		* [显示 "加载中"状态 模态图标](#3-10-1-显示-quot-加载中-quot-状态-模态图标)
+		* [隐藏 "加载中"状态 模态图标](#3-10-2-隐藏-quot-加载中-quot-状态-模态图标)
+	* [全屏浏览大图](#3-11-全屏浏览大图)
+	* alert/confirm/toastAlert
+		* [显示confirm框](#3-12-1-显示confirm框)
+		* [显示alert框](#3-12-2-显示alert框)
+		* [显示toastAlert框](#3-12-3-显示toastalert框)
+	* [关闭键盘](#3-13-关闭键盘)
+	* [关闭集成界面](#3-14-关闭集成界面)
+	* 支付
+		* [支付](#3-15-1-支付)
 * [示例](#4-example)
 
 
@@ -104,7 +133,7 @@ __调用API:__
 
 ### 3. API LIST
 
-__3.1.1 获取用户基本信息__
+#### 3.1.1 获取用户基本信息
 
 	MCK.h5.call("getUserInfo");
 
@@ -143,7 +172,7 @@ Callback Data: `Object`
 
 <br>
 
-__3.1.2 获取用户token__
+#### 3.1.2 获取用户token
 
 	MCK.h5.call("getUserToken");
 
@@ -164,7 +193,7 @@ Callback Data: `String`
 
 
 
-__3.2 调用相机或通过相册选择照片__
+#### 3.2 调用相机或通过相册选择照片
 
 	MCK.h5.call("takeOrPickPhoto", config, callback);
 
@@ -183,7 +212,7 @@ Callback Data: `String`
 
 <br>
 
-__3.3 调用三方分享__
+#### 3.3 调用三方分享
 
 	MCK.h5.call("share", config, callback);
 
@@ -206,7 +235,7 @@ Callback Data: `Object`
 
 <br>
 
-__3.4 注销登录__
+#### 3.4 注销登录
 
 	MCK.h5.call("logout");
 
@@ -222,7 +251,7 @@ Callback Data:
 
 <br>
 
-__3.5 退出应用__
+#### 3.5 退出应用
 
 	MCK.h5.call("exitApp");
 
@@ -238,7 +267,7 @@ Callback Data:
 
 <br>
 
-__3.6.1 设置 NavigationBar 名称__
+#### 3.6.1 设置 NavigationBar 名称
 
 	MCK.h5.call("setNavBarTitle", title);
 
@@ -250,7 +279,7 @@ Parameters:
 
 <br>
 
-__3.6.2 添加 NavigationBar Title Item__
+#### 3.6.2 添加 NavigationBar Title Item
 
 	MCK.h5.call("addNavBarTitleList", config, listener);
 
@@ -264,7 +293,7 @@ Parameters:
 
 <br>
 
-__3.6.3 删除 NavigationBar Title Item__
+#### 3.6.3 删除 NavigationBar Title Item
 
 	MCK.h5.call("delNavBarTitleList", flag);
 
@@ -276,7 +305,7 @@ Parameters:
 
 <br>
 
-__3.6.4 清空 NavigationBar Title LIST__
+#### 3.6.4 清空 NavigationBar Title LIST
 
 	MCK.h5.call("clearNavBarTitleList");
 
@@ -288,7 +317,7 @@ Parameters:
 
 <br>
 
-__3.7.1 添加 NavigationBar 右侧按钮__
+#### 3.7.1 添加 NavigationBar 右侧按钮
 
 	sdk.h5.call("addNavBarMainBtn", config, listener);
 
@@ -303,7 +332,7 @@ Parameters:
 
 <br>
 
-__3.7.2 删除 NavigationBar 右侧按钮__
+#### 3.7.2 删除 NavigationBar 右侧按钮
 
 	sdk.h5.call("delNavBarMainBtn", flag);
 
@@ -315,7 +344,7 @@ Parameters:
 
 <br>
 
-__3.7.3 清空 NavigationBar 右侧按钮__
+#### 3.7.3 清空 NavigationBar 右侧按钮
 
 	sdk.h5.call("clearNavBarMainBtn");
 
@@ -327,7 +356,7 @@ Parameters:
 
 <br>
 
-__3.8 调用拨号__
+#### 3.8 调用拨号
 
 	sdk.h5.call("callDial", telNumber);
 
@@ -339,7 +368,7 @@ Parameters:
 
 <br>
 
-__3.9 调用扫描二维码__
+#### 3.9 调用扫描二维码
 
 	MCK.h5.call("scan", callback);
 
@@ -366,7 +395,7 @@ Callback Data: `Object`
 
 <br>
 
-__3.10.1 显示 "加载中"状态 模态图标__
+#### 3.10.1 显示 "加载中"状态 模态图标
 
 	sdk.h5.call("progressBar.show");
 
@@ -378,7 +407,7 @@ Parameters:
 
 <br>
 
-__3.10.2 隐藏 "加载中"状态 模态图标__
+#### 3.10.2 隐藏 "加载中"状态 模态图标
 
 	sdk.h5.call("progressBar.hide");
 
@@ -390,7 +419,7 @@ Parameters:
 
 <br>
 
-__3.11 全屏浏览大图__
+#### 3.11 全屏浏览大图
 
 	MCK.h5.call("viewFullImg", imgSrc);
 
@@ -402,7 +431,7 @@ Parameters:
 
 <br>
 
-__3.12.1 显示confirm框__
+#### 3.12.1 显示confirm框
 
 	MCK.h5.call("popup.confirm", config, listener);
 
@@ -421,7 +450,7 @@ Callback Data: `String`
 
 <br>
 
-__3.12.2 显示alert框__
+#### 3.12.2 显示alert框
 
 	MCK.h5.call("popup.alter", config, listener);
 
@@ -435,7 +464,7 @@ Parameters:
 
 <br>
 
-__3.12.3 显示toastAlert框__
+#### 3.12.3 显示toastAlert框
 
 	MCK.h5.call("popup.toastAlert", config);
 
@@ -448,7 +477,7 @@ Parameters:
 
 <br>
 
-__3.13 关闭键盘__
+#### 3.13 关闭键盘
 
 	MCK.h5.call("closeKeyboard");
 
@@ -460,7 +489,7 @@ Parameters:
 
 <br>
 
-__3.14 关闭集成界面__
+#### 3.14 关闭集成界面
 
 	MCK.h5.call("closeSelf");
 
@@ -469,6 +498,44 @@ Parameters:
 | 参数 | 类型 | 描述   |
 | ------------- | ------------- | ------------- |
 | 无 | - | - |
+
+<br>
+
+#### 3.15.1 支付
+
+	MCK.h5.call("pay", payInfo);
+
+Parameters:
+
+| 参数 | 类型 | 描述 | 备注 |
+| ------------- | ------------- | ------------- | ------------- |
+| payInfo.clientId | String | 商户编号，申请为开发者后系统分配 | - |
+| payInfo.merchantOrderNo | String | 商户订单号 | 需要通过UrlEncode编码，编码格式UTF-8 |
+| payInfo.productName | String | 商品名称 | 需要通过UrlEncode编码，编码格式UTF-8 |
+| payInfo.amount | String | 商品金额 | 商品金额 |
+| payInfo.successUrl | String | 支付成功后页面返 | 不能带参数 |
+| payInfo.notifyUrl | String | 支付成功后后台回调地址 | 不能带参数 |
+| payInfo.state | String | 透传参数 | 支付完成后会原样返回给商户 |
+| payInfo.signature | String | 签名 | 详见签名规则文档 |
+
+
+#### 3.15.2 支付订单(内部)
+
+	MCK.h5.call("payOrder", orderData);
+
+Parameters:
+
+| 参数 | 类型 | 描述 | 备注 |
+| ------------- | ------------- | ------------- | ------------- |
+| orderData.orderInfo | Array | ------------- | ------------- |
+| orderData.orderInfo[].order_id | String | ------------- | ------------- |
+| orderData.orderInfo[].amount | String | ------------- | ------------- |
+| orderData.orderInfo[].product_name | String | ------------- | ------------- |
+| orderData.channelList | Array | ------------- | ------------- |
+| orderData.channelList[].channelId | String | ------------- | ------------- |
+| orderData.channelList[].channelCode | String | ------------- | ------------- |
+| orderData.channelList[].channelName | String | ------------- | ------------- |
+
 
 <br>
 
