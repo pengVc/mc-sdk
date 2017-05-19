@@ -58,7 +58,7 @@
 				});
 
 			})
-			
+
 			.on("click", ".j_getUserToken", function () {
 				$results.hide();
 
@@ -158,7 +158,8 @@
 
 		var
 			actionToolFlag = "tool",
-			actionTitleFlag = "toolTittle"
+			actionTitleFlag = "toolTittle",
+			actionTitleTextFlag = "toolTextTittle"
 		;
 
 		$onElem
@@ -219,6 +220,26 @@
 				$results.hide();
 				sdk.h5.call("delNavBarMainBtn", actionToolFlag);
 			})
+
+			.on("click", ".j_navbar_text_add", function(){
+				$results.hide();
+				sdk.h5.call("addNavBarMainBtn", {
+					name   : "文字",
+					flag   : actionTitleTextFlag,
+					text   : "两字"
+				}, function(){
+					$(".j_results_message")
+						.show()
+						.text("你点击了 两字 _ " + (new Date).getTime())
+					;
+				});
+			})
+
+			.on("click", ".j_navbar_text_del", function(){
+				$results.hide();
+				sdk.h5.call("delNavBarMainBtn", actionTitleTextFlag);
+			})
+
 
 			.on("click", ".j_navbar_clear", function(){
 				$results.hide();
