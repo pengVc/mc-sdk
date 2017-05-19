@@ -328,6 +328,7 @@ Parameters:
 | config.name | String | ( 按钮名称 ) |
 | config.flag | String | 按钮标识( 可用做删除 ) |
 | config.iconSrc | String | 按钮的图标( 可接受 url, 或 base64 ) |
+| config.text | String | 按钮的文字图标, 推荐为2个字. 注: text、iconSrc 任设置其一 |
 | listener | Function | 按钮被点击的回调 |
 
 <br>
