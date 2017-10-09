@@ -111,7 +111,7 @@
 					title  : "我要分享",
 					content: "分享内存",
 					url    : "https://www.app8848.com/prime/",
-					imgUrl : "http://mobilecampus.oss.aliyuncs.com/discover/MC_108/zsQ2zcUMz8kHy8fOy_.png"
+					imgSrc : "https://mobilecampus.oss.aliyuncs.com/discover/MC_136/MTrPNzrLMzvzNzMOM_.png"
 
 				}, function(msg){
 
