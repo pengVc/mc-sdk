@@ -391,6 +391,69 @@
 				;
 
 			})
+
+			.on("click", ".j_getCurrentPositionByAMap", function() {
+				$(".j_results_message")
+					.show()
+					.text("定位中……")
+				;
+				sdk.h5.call("getCurrentPosition", {
+					platform: "aMap"
+				}, function(msg) {
+
+					var
+						result,
+						error
+					;
+
+					if (msg.status === 1) {
+						result = msg.result;
+						$(".j_results_message")
+							.show()
+							.text(objectStyle(result))
+						;
+					} else {
+						error = msg.error;
+						$(".j_results_message")
+							.show()
+							.text(objectStyle(error))
+						;
+					}
+				});
+
+			})
+
+			.on("click", ".j_getCurrentPositionByBMap", function() {
+				$(".j_results_message")
+					.show()
+					.text("定位中……")
+				;
+				sdk.h5.call("getCurrentPosition", {
+					platform: "bMap"
+				}, function(msg) {
+
+					var
+						result,
+						error
+					;
+
+					if (msg.status === 1) {
+						result = msg.result;
+						$(".j_results_message")
+							.show()
+							.text(objectStyle(result))
+						;
+					} else {
+						error = msg.error;
+						$(".j_results_message")
+							.show()
+							.text(objectStyle(error))
+						;
+					}
+				});
+
+			})
+
 		;
 
 	}

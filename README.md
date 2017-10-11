@@ -38,6 +38,7 @@
 	* [关闭集成界面](#3-14-关闭集成界面)
 	* 支付
 		* [支付](#3-15-1-支付)
+	* [获取定位信息](#3-16-获取定位信息)
 * [示例](#4-example)
 
 
@@ -535,6 +536,41 @@ Parameters:
 | orderData.channelList[].channelCode | String | ------------- | ------------- |
 | orderData.channelList[].channelName | String | ------------- | ------------- |
 
+
+<br>
+
+#### 3.16 获取定位信息
+
+	MCK.h5.call("getCurrentPosition", config);
+
+Parameters:
+
+| 参数 | 类型 | 描述 | 备注 |
+| ------------- | ------------- | ------------- | ------------- |
+| config.platform | String | 获取定位平台类型（aMap/bMap） | aMap:高德，bMap:百度 |
+
+Callback Data: `Object`
+
+	{
+        /**
+         * @status { Number } 1 || 0   
+         *          1为定位成功, 0 为定位失败
+         *
+         * @result { Object } successMessage
+         *            { Number } result.lng
+         *            { Number } result.lat
+         *            { Number } result.accuracy 精度范围
+         *            { String } result.address 地点名称
+         *
+         *            { Object } result.extra 定位返回原始信息
+         *
+         * @error { String } errorMessage
+         *
+         */
+		status: status,
+		result: result,
+		error: error
+    }
 
 <br>
 
