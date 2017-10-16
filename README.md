@@ -557,10 +557,9 @@ Callback Data: `Object`
          *          1为定位成功, 0 为定位失败
          *
          * @result { Object } successMessage
-         *            { Number } result.lng
-         *            { Number } result.lat
+         *            { Number } result.lng 经度
+         *            { Number } result.lat 纬度
          *            { Number } result.accuracy 精度范围
-         *            { String } result.address 地点名称
          *
          *            { Object } result.extra 定位返回原始信息
          *
