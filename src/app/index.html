@@ -2,15 +2,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LT JS-SDK Example</title>
+	<title>LT MC-JS-SDK Example</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-
-	<meta http-equiv="Content-Security-Policy"
-	      content="default-src *; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; frame-src *; media-src *">
-
-	<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="misc/_site.css" />
 
 	<script src="//www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=9f46f04c"></script>
 
@@ -19,7 +13,7 @@
 
 	<div class="s-hd">
 		<h1 class="text-center s-hd-tie">
-			Lantu-MC JS-SDK Example
+			Lantu MC-JS-SDK Example
 		</h1>
 	</div>
 
@@ -108,13 +102,28 @@
 
 				<button class="btn btn-inline btn-default j_getUserAgent">Get uAgent</button>
 
+				<hr>
+
 				<button class="btn btn-inline btn-default j_getCurrentPositionByAMap">高德定位</button>
 
 				<button class="btn btn-inline btn-default j_getCurrentPositionByBMap">百度定位</button>
 
+				<hr>
+
 				<form class="form-inline">
 					<input class="form-control" type="text" placeholder="输入框...">
 				</form>
+
+				<hr>
+
+				<button class="btn btn-inline btn-default j_open_inner">打开兰途大学官网_inner</button>
+				<button class="btn btn-inline btn-default j_open_system">打开兰途大学官网_system</button>
+				<button class="btn btn-inline btn-default j_open_pdf">查看 PDF</button>
+				<button class="btn btn-inline btn-default j_open_download">下载兰途 APK</button>
+
+				<hr>
+
+				<button class="btn btn-inline btn-default j_nav_top">nav_top 测试</button>
 
 			</div>
 		</div>
@@ -127,14 +136,10 @@
 			<div class="s-sub-view scroll-y">
 				<pre class="j_results j_results_message none">
 				</pre>
-				<img class="j_results j_results_photo none img-responsive" src="" alt="" />
+				<img class="j_results j_results_photo none img-responsive" />
 			</div>
 		</div>
 	</div>
-
-	<script src="lib/jQuery/jquery-1.11.2.min.js"></script>
-
-	<script src="misc/_site.js?v=4"></script>
 
 </body>
 </html>

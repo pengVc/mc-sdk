@@ -1,6 +1,9 @@
 /**
  * Created by Tan on 2015/7/30.
+ * Refactor by VC on 2017/11/01.
  */
+
+import $ from "zepto";
 
 (function(MCK, $){
 
@@ -456,10 +459,48 @@
 
 		;
 
+		$onElem
+			.on("click", ".j_open_inner", function(){
+				sdk.h5.call("open", {
+					url   : "https://www.app8848.com/prime/",
+					target: "_blank"
+				});
+			})
+
+			.on("click", ".j_open_system", function(){
+				sdk.h5.call("open", {
+					url   : "https://www.app8848.com/prime/",
+					target: "_system"
+				});
+			})
+
+			.on("click", ".j_open_pdf", function(){
+				sdk.h5.call("open", {
+					url   : "https://www.app8848.com/test/%E6%8F%90%E4%BA%A4%E4%BF%A1%E6%81%AF%E6%8C%87%E5%8D%97%20-%20Commit%20Message%20Standard%20Guide.pdf",
+					target: "_system"
+				});
+			})
+
+			.on("click", ".j_open_download", function(){
+				sdk.h5.call("open", {
+					url   : "https://www.app8848.com/prime/app_files/MC_PRIME.apk",
+					target: "_system"
+				});
+
+			})
+
+		;
+
+		$onElem
+			.on("click", ".j_nav_top", function(){
+				top.location.href = "https://www.app8848.com/";
+			})
+		;
+
 	}
 
 	function objectStyle(devInfo){
 		return JSON.stringify.call(JSON, devInfo, "", 4);
 	}
 
-})(window.MCK, window.jQuery);
+})(window.MCK, $);
