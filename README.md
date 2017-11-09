@@ -39,6 +39,7 @@
 	* 支付
 		* [支付](#3151-支付)
 	* [获取定位信息](#316-获取定位信息)
+	* [使用浏览器打开](#317-使用浏览器打开---open)
 * [示例](#4-example)
 
 
@@ -572,6 +573,20 @@ Callback Data: `Object`
     }
 
 <br>
+
+#### 3.17 使用浏览器打开 - open
+
+	MCK.h5.call("open", config);
+
+Parameters:
+
+| 参数 | 类型 | 描述 | 备注 |
+| ------------- | ------------- | ------------- | ------------- |
+| config.url | String | 连接url | - |
+| config.target | String | 打开方式( 可选值: "_blank"、"_system" ) | "_blank": 内部浏览器 <br> "_system": 使用系统浏览器 |
+
+<br>
+
 
 ### 4. Example
 
