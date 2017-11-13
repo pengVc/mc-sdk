@@ -5,7 +5,12 @@
 
 const
 	webpack = require("webpack"),
-	CleanWebpackPlugin = require("clean-webpack-plugin")
+	CleanWebpackPlugin = require("clean-webpack-plugin"),
+	ExtractTextPlugin = require("extract-text-webpack-plugin")
+;
+
+const
+	kit = require("../kit.js")
 ;
 
 const prodConfig = {
@@ -46,12 +51,17 @@ const prodConfig = {
 				drop_console : true,  // drop console
 				warnings     : false  // warn about potentially dangerous optimizations/code
 			}
+		}),
+
+		new ExtractTextPlugin({
+			filename : "[contenthash].css"
 		})
 
 	],
 
 	module: {
 		rules: [
+
 			{
 				test: /\.(html)$/,
 				use : {
@@ -62,7 +72,25 @@ const prodConfig = {
 						collapseWhitespace: false
 					}
 				}
-			}
+			},
+
+			kit.assignInsight.identify("rules.css", {
+				test   : /\.css$/,
+				use    : ExtractTextPlugin.extract({
+					fallback: "style-loader",
+					use     : [
+						{
+							loader : "css-loader",
+							options: {
+								sourceMap: true,
+								minimize : true
+							}
+						}
+					]
+				})
+
+			})
+
 		]
 	}
 

@@ -8,6 +8,10 @@ const
 	HtmlWebpackPlugin = require("html-webpack-plugin")
 ;
 
+const
+	kit = require("../kit.js")
+;
+
 const baseConfig = {
 
 	entry: {
@@ -69,7 +73,7 @@ const baseConfig = {
 				}
 			},
 
-			{
+			kit.assignInsight.identify("rules.css", {
 				test: /\.css$/,
 				use : [
 					{
@@ -78,10 +82,11 @@ const baseConfig = {
 					{
 						loader : "css-loader",
 						options: {
+							minimize: false
 						}
 					}
 				]
-			},
+			}),
 
 			{
 				test: /\.(ttf|woff|woff2|eot|svg)$/,
