@@ -41,6 +41,8 @@ function isProduction(){
 
 }
 
+assignInsight.identify = identifyObject;
+
 /**
  * Smart Deep Mode For Object.assign
  * @param target
@@ -104,6 +106,18 @@ const nativeConstructorList = _getNativeConstructorList();
  */
 function _isCustomInstance(obj){
 	return !!(obj && -1 === nativeConstructorList.indexOf(obj && obj.constructor && obj.constructor.name));
+}
+
+/**
+ * 标识对象, 配合 assignInsight 一同使用
+ * @param { String } id
+ * @param { Object } obj
+ * @return { Object }
+ */
+function identifyObject(id, obj){
+	return Object.assign(Object.create(obj), {
+		constructor: id
+	});
 }
 
 /**
