@@ -135,7 +135,7 @@ __调用API:__
 
 #### 3.1.1 获取用户基本信息
 
-	MCK.h5.call("getUserInfo");
+	MCK.h5.call("getUserInfo", callback);
 
 Parameters:
 
@@ -174,7 +174,7 @@ Callback Data: `Object`
 
 #### 3.1.2 获取用户token
 
-	MCK.h5.call("getUserToken");
+	MCK.h5.call("getUserToken", callback);
 
 Parameters:
 
@@ -542,7 +542,7 @@ Parameters:
 
 #### 3.16 获取定位信息
 
-	MCK.h5.call("getCurrentPosition", config);
+	MCK.h5.call("getCurrentPosition", config, callback);
 
 Parameters:
 
