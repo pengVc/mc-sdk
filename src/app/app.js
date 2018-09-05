@@ -28,6 +28,8 @@ import $ from "zepto";
 					.html(sdk.h5.getApi().join("<br>"))
 				;
 
+				console.log(sdk.h5.getApi());
+
 			})
 
 			.on("click", ".j_getUser", function(){
@@ -42,6 +44,9 @@ import $ from "zepto";
 						.show()
 						.text(objectStyle(userData))
 					;
+
+					console.log(userData);
+
 				});
 
 			})
@@ -58,6 +63,9 @@ import $ from "zepto";
 						.show()
 						.text(objectStyle(userData))
 					;
+
+					console.log(userData);
+
 				});
 
 			})
@@ -73,6 +81,9 @@ import $ from "zepto";
 						.show()
 						.text(objectStyle(userToken))
 					;
+
+					console.log(userToken);
+
 				});
 			})
 
@@ -81,13 +92,14 @@ import $ from "zepto";
 				$results.hide();
 
 				// 调用设备相机
-				sdk.h5.call("takePhoto", function(base64){
+				sdk.h5.call("takePhoto", _watchH5Callback("takePhoto 回调信息: ", function(base64){
 
 					$(".j_results_photo")
 						.show()
 						.attr("src", base64)
 					;
-				});
+
+				}));
 
 			})
 
@@ -96,14 +108,14 @@ import $ from "zepto";
 				$results.hide();
 
 				// 调用设备相机
-				sdk.h5.call("pickPhoto", function(base64){
+				sdk.h5.call("pickPhoto", _watchH5Callback("pickPhoto 回调信息: ", function(base64){
 
 					// userData 为APP中传入的 用户数据
 					$(".j_results_photo")
 						.show()
 						.attr("src", base64)
 					;
-				});
+				}));
 
 			})
 
@@ -116,13 +128,13 @@ import $ from "zepto";
 					url    : "https://www.app8848.com/prime/",
 					imgSrc : "https://mobilecampus.oss.aliyuncs.com/discover/MC_136/MTrPNzrLMzvzNzMOM_.png"
 
-				}, function(msg){
+				}, _watchH5Callback("share 回调信息: ", function(msg){
 
 					$(".j_results_message")
 						.show()
 						.text(1 === msg.status ? "分享成功" : "分享失败")
 					;
-				});
+				}));
 
 			})
 
@@ -135,6 +147,9 @@ import $ from "zepto";
 						.show()
 						.text(objectStyle(devInfo))
 					;
+
+					console.log(devInfo);
+
 				});
 
 			})
@@ -260,7 +275,7 @@ import $ from "zepto";
 
 			.on("click", ".j_scan", function() {
 				$results.hide();
-				sdk.h5.call("scan", function(msg) {
+				sdk.h5.call("scan", _watchH5Callback("scan 回调信息: ", function(msg) {
 
 					var
 						result,
@@ -282,7 +297,7 @@ import $ from "zepto";
 							.text("Error: " + error)
 						;
 					}
-				});
+				}));
 			})
 
 			.on("click", ".j_closeKeyboard", function(){
@@ -299,19 +314,24 @@ import $ from "zepto";
 		$onElem
 
 			.on("click", ".j_confirm", function() {
+
 				$results.hide();
+
 				sdk.h5.call("popup.confirm", {
 					msg: "还是要学习一个",
 					title: "提醒一下",
 					buttons: ["学习","不学习"]
-				}, function(state) {
+				}, _watchH5Callback("popup.confirm 回调信息: ", function(state) {
+
 					var hasStudy = state === "resolve";
 
 					$(".j_results_message")
 						.show()
 						.text(hasStudy ? "你学习了一个" : "你没有学习")
 					;
-				});
+
+				}));
+
 			})
 
 			.on("click", ".j_alert", function() {
@@ -335,7 +355,7 @@ import $ from "zepto";
 					title: "续么",
 					buttons: ["续", "不续"],
 					defaultText: "1"
-				}, function(onf) {
+				}, _watchH5Callback("popup.prompt 回调信息: ", function(onf) {
 					var text;
 
 					if (onf.state === "resolve") {
@@ -348,7 +368,7 @@ import $ from "zepto";
 						.show()
 						.text(text);
 					;
-				})
+				}))
 			})
 
 			.on("click", ".j_toastAlert", function() {
@@ -388,10 +408,13 @@ import $ from "zepto";
 			})
 
 			.on("click", ".j_getUserAgent", function() {
+
 				$(".j_results_message")
 					.show()
 					.text(navigator.userAgent)
 				;
+
+				console.log(navigator.userAgent);
 
 			})
 
@@ -402,7 +425,7 @@ import $ from "zepto";
 				;
 				sdk.h5.call("getCurrentPosition", {
 					platform: "aMap"
-				}, function(msg) {
+				}, _watchH5Callback("Amap定位信息: ", function(msg) {
 
 					var
 						result,
@@ -422,7 +445,7 @@ import $ from "zepto";
 							.text(objectStyle(error))
 						;
 					}
-				});
+				}));
 
 			})
 
@@ -433,7 +456,7 @@ import $ from "zepto";
 				;
 				sdk.h5.call("getCurrentPosition", {
 					platform: "bMap"
-				}, function(msg) {
+				}, _watchH5Callback("Bmap定位信息: ", function(msg) {
 
 					var
 						result,
@@ -453,7 +476,7 @@ import $ from "zepto";
 							.text(objectStyle(error))
 						;
 					}
-				});
+				}));
 
 			})
 
@@ -501,6 +524,20 @@ import $ from "zepto";
 
 	function objectStyle(devInfo){
 		return JSON.stringify.call(JSON, devInfo, "", 4);
+	}
+
+	function _watchH5Callback(msgPrefix, fn){
+
+		if("function" === typeof msgPrefix){
+			fn = msgPrefix;
+			msgPrefix = " - "
+		}
+
+		return function(msg){
+			console.log(msgPrefix, msg);
+			fn.apply(null, arguments);
+		}
+
 	}
 
 })(window.MCK, $);
