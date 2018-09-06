@@ -89,10 +89,16 @@ import $ from "zepto";
 
 			.on("click", ".j_tackPhoto", function(){
 
+				var photoConfig = {
+					width  : 720,
+					height : 720,
+					quality: 0.88
+				};
+
 				$results.hide();
 
 				// 调用设备相机
-				sdk.h5.call("takePhoto", _watchH5Callback("takePhoto 回调信息: ", function(base64){
+				sdk.h5.call("takePhoto", photoConfig, _watchH5Callback("takePhoto 回调信息: ", function(base64){
 
 					$(".j_results_photo")
 						.show()
@@ -105,10 +111,16 @@ import $ from "zepto";
 
 			.on("click", ".j_pickPhoto", function(){
 
+				var photoConfig = {
+					width  : 720,
+					height : 720,
+					quality: 0.88
+				};
+
 				$results.hide();
 
 				// 调用设备相机
-				sdk.h5.call("pickPhoto", _watchH5Callback("pickPhoto 回调信息: ", function(base64){
+				sdk.h5.call("pickPhoto", photoConfig, _watchH5Callback("pickPhoto 回调信息: ", function(base64){
 
 					// userData 为APP中传入的 用户数据
 					$(".j_results_photo")
