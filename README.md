@@ -49,13 +49,14 @@
 
 ![示例](src/img/setup_snap.png)
 
+sdk_2.0.0: [mc-sdk.2.0.0.js](https://gitee.com/lantu/mc-sdk-insight-public/raw/master/mc-sdk.2.0.0.js "MC-SDK_2.0.0")
+
 sdk_1.0.7: [mc_kit_sdk_1.0.7.min.js](https://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.7.min.js?appkey=LIMC0001 "MC-SDK_1.0.7")
 
 sdk_1.0.6: [mc_kit_sdk_1.0.6.min.js](https://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.6.min.js?appkey=LIMC0001 "MC-SDK_1.0.6")
 
 sdk_1.0.5: [mc_kit_sdk_1.0.5.min.js](https://www.app8848.com/mc_sdk/mc_kit_sdk_1.0.5.min.js?appkey=LIMC0001 "MC-SDK_1.0.5")
 
-sdk_最新版: [https://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=<yourAppKey>](https://www.app8848.com/mc_sdk/mc_kit_sdk.min.js?appkey=<yourAppKey> "MC-SDK 最新版")
 
 ### 2. 使用
 
@@ -204,7 +205,7 @@ Parameters:
 | config.allowEdit | Boolean | 是否允许编辑 |
 | config.width | Number | 图片宽度 |
 | config.height | Number | 图片高度 |
-| config.quality | Number | 图片压缩比例(0-100) |
+| config.quality | Number | 图片压缩比例(取值范围: 0~1) |
 
 Callback Data: `String`
 
