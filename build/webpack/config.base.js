@@ -15,11 +15,13 @@ const
 const baseConfig = {
 
 	entry: {
-		common: [
+		common  : [
 			"zepto",
 			"bootstrap/dist/css/bootstrap.min.css"
 		],
-		app: "./index.js"
+
+		app     : "./src/bootstrap.js",
+		appAsync: "./src/bootstrap-async.js"
 	},
 
 	output: {
@@ -42,7 +44,25 @@ const baseConfig = {
 				preserveLineBreaks  : false,
 				removeComments      : true
 			},
-			inject  : true
+			inject  : true,
+			excludeChunks: [
+				"appAsync"
+			]
+		}),
+
+		new HtmlWebpackPlugin({
+			template     : "src/app/index-async.html",
+			filename     : "index-async.html",
+			minify       : {
+				collapseWhitespace  : true,
+				conservativeCollapse: true,
+				preserveLineBreaks  : false,
+				removeComments      : true
+			},
+			inject       : true,
+			excludeChunks: [
+				"app"
+			]
 		})
 
 	],
