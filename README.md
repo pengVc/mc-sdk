@@ -16,11 +16,11 @@ __参考资源:__
 
 __安装:__
 
-请在 `<head>` 标签中添加 sdk `<script>`
+请在 `<head>` 标签中添加 sdk `<script>` _(请查看[最近的sdk发行版](https://gitee.com/lantu/mc-sdk-insight-public/releases))_
 
 ```html
 
-<script src="https://gitee.com/lantu/mc-sdk-insight-public/raw/v2.0.0/mc-sdk.2.0.0.js?appkey=9f46f04c"></script>
+<script src="https://gitee.com/lantu/mc-sdk-insight-public/raw/v2.0.1/mc-sdk.2.0.1.js?appkey=9f46f04c"></script>
 
 ```
 
