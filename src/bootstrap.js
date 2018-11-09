@@ -4,4 +4,7 @@
 
 import "bootstrap/dist/css/bootstrap.min.css"
 import "./app/app.css"
-import "./app/app.js"
+import MCReady from "./app/app.js"
+
+window.MCK.ready(MCReady);
+
