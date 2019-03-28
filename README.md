@@ -9,6 +9,7 @@ __参考资源:__
 + [Wiki 文档](https://gitee.com/lantutech/mc-sdk/wikis)
 + [通信 API](https://gitee.com/lantutech/mc-sdk/wikis/通信API文档?sort_id=736755)
 + [实战 Demo](https://gitee.com/lantutech/mc-sdk/blob/master/src/app/app.js#L92)
++ [常见问题](https://gitee.com/lantutech/mc-sdk/wikis/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98?sort_id=1372927)
 
 
 ### 快速集成 ###
