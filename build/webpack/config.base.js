@@ -4,7 +4,6 @@
 
 const
 	path = require("path"),
-	webpack = require("webpack"),
 	HtmlWebpackPlugin = require("html-webpack-plugin")
 ;
 
@@ -14,12 +13,9 @@ const
 
 const baseConfig = {
 
-	entry: {
-		common  : [
-			"zepto",
-			"bootstrap/dist/css/bootstrap.min.css"
-		],
+	mode: kit.isProduction() ? "production" : "development",
 
+	entry: {
 		app     : "./src/bootstrap.js",
 		appAsync: "./src/bootstrap-async.js"
 	},
@@ -30,10 +26,6 @@ const baseConfig = {
 	},
 
 	plugins: [
-
-		new webpack.optimize.CommonsChunkPlugin({
-			name: "common"
-		}),
 
 		new HtmlWebpackPlugin({
 			template: "src/app/index.html",
@@ -93,7 +85,7 @@ const baseConfig = {
 				}
 			},
 
-			kit.assignInsight.identify("rules.css", {
+			kit.assignInsight.identify("module/rules/css", {
 				test: /\.css$/,
 				use : [
 					{

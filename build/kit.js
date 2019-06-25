@@ -108,6 +108,11 @@ function _isCustomInstance(obj){
 	return !!(obj && -1 === nativeConstructorList.indexOf(obj && obj.constructor && obj.constructor.name));
 }
 
+function _clearCustomFlag(obj){
+	delete obj.constructor;
+	return obj;
+}
+
 /**
  * 标识对象, 配合 assignInsight 一同使用
  * @param { String } id
@@ -168,6 +173,8 @@ function _arrayPushAssign(targetList, sourceList){
 	}
 
 	targetList.push.apply(targetList, sourceList);
+
+	targetList.forEach(_clearCustomFlag);
 
 	return targetList;
 

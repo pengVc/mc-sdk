@@ -28,9 +28,11 @@ function build(){
 	const webpackConfig = refineConfig();
 
 	webpack(webpackConfig, (err, stats) => {
-		if (err || stats.hasErrors()) {
+
+		if(err || stats.hasErrors()){
 			// 在这里处理错误
 		}
+
 		// 处理完成
 		console.log(stats.toString({
 			chunks: false,  // 使构建过程更静默无输出
@@ -57,7 +59,7 @@ function refineConfig(){
 function dev(){
 
 	const
-		webpackDevServer = require("webpack-dev-server"),
+		WebpackDevServer = require("webpack-dev-server"),
 		opn = require("opn")
 	;
 
@@ -70,11 +72,11 @@ function dev(){
 		}
 	}, webpackConfig.devServer);
 
-	webpackDevServer.addDevServerEntrypoints(webpackConfig, devServerConfig);
+	WebpackDevServer.addDevServerEntrypoints(webpackConfig, devServerConfig);
 
 	const
 		compiler = webpack(webpackConfig),
-		server = new webpackDevServer(compiler, devServerConfig)
+		server = new WebpackDevServer(compiler, devServerConfig)
 	;
 
 	server.listen(devServerConfig.port, devServerConfig.host, () =>{
