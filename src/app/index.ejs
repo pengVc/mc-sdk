@@ -2,9 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>LT MC-JS-SDK Async Example</title>
+	<title><%= htmlWebpackPlugin.options.title %></title>
+
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<%= htmlWebpackPlugin.options.scriptSdk %>
+
 </head>
 <body>
 
@@ -33,9 +37,7 @@
 		</div>
 	</div>
 
-	<script src="https://www.app8848.com/mc-sdk-demo/utils/vconsole.min.js"></script>
-	<script>
-		new VConsole();
-	</script>
+	<%= htmlWebpackPlugin.options.scriptVConsole %>
+
 </body>
 </html>
