@@ -20,17 +20,15 @@ const devConfig = {
 		https           : !true,
 		port            : 8055,
 		open            : true,
-		hotOnly         : true
+
+		hot             : true,
+		hotOnly         : true,
+		disableHostCheck: true,
 	},
 
 	module: {
 		rules: [
-			{
-				test: /\.(html)$/,
-				use: {
-					loader: "html-loader"
-				}
-			}
+
 		]
 	},
 

@@ -4,7 +4,7 @@
 
 Kit.getCliParams = getCliParamsFactory();
 Kit.isProduction = isProduction;
-Kit.assignInsight = assignInsight;
+Kit.assignInsight = assignInsightFace;
 Kit.isObject = isObject;
 Kit.isArray = isArray;
 
@@ -41,7 +41,21 @@ function isProduction(){
 
 }
 
-assignInsight.identify = identifyObject;
+assignInsightFace.identify = identifyObject;
+
+/**
+ * Smart Deep Mode For Object.assign
+ * @param target
+ * @param sourceCollection
+ * @returns {*}
+ */
+function assignInsightFace(target = {}, ...sourceCollection){
+
+	return sourceCollection.reverse().reduce((target, source) => {
+		return assignInsight(target, source);
+	}, target);
+
+}
 
 /**
  * Smart Deep Mode For Object.assign

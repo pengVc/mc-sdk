@@ -27,35 +27,62 @@ const baseConfig = {
 
 	plugins: [
 
-		new HtmlWebpackPlugin({
-			template: "src/app/index.html",
-			filename: "index.html",
-			minify  : {
-				collapseWhitespace  : true,
-				conservativeCollapse: true,
-				preserveLineBreaks  : false,
-				removeComments      : true
-			},
-			inject  : true,
-			excludeChunks: [
-				"appAsync"
-			]
-		}),
+		...(() => {
 
-		new HtmlWebpackPlugin({
-			template     : "src/app/index-async.html",
-			filename     : "index-async.html",
-			minify       : {
-				collapseWhitespace  : true,
-				conservativeCollapse: true,
-				preserveLineBreaks  : false,
-				removeComments      : true
-			},
-			inject       : true,
-			excludeChunks: [
-				"app"
-			]
-		})
+			const baseHtmlWpPluginConfig = {
+
+				template: "src/app/index.ejs",
+
+				minify: {
+					collapseWhitespace  : true,
+					conservativeCollapse: true,
+					preserveLineBreaks  : false,
+					removeComments      : true
+				},
+
+				inject: true,
+
+				scriptVConsole: kit.isProduction() ?
+					`<script src="https://www.app8848.com/mc-sdk-demo/utils/vconsole.min.js"></script><script> new VConsole();</script>` :
+					""
+
+			};
+
+			const syncConfig = kit.assignInsight(
+				{},
+				baseHtmlWpPluginConfig,
+				{
+					title             : "LT MC-JS-SDK Example",
+					filename          : "index.html",
+					excludeChunks     : [
+						"appAsync"
+					],
+
+					scriptSdk: `<script src="https://gitee.com/lantu/mc-sdk-insight-public/raw/v2.0.1/mc-sdk.2.0.1.js?appkey=9f46f04c"></script>`
+
+				})
+			;
+
+			const asyncConfig = kit.assignInsight(
+				{},
+				baseHtmlWpPluginConfig,
+				{
+					title             : "LT MC-JS-SDK Async Example",
+					filename          : "index-async.html",
+					excludeChunks     : [
+						"app"
+					],
+
+					scriptSdk: ``
+
+				});
+
+			return [
+				new HtmlWebpackPlugin(syncConfig),
+				new HtmlWebpackPlugin(asyncConfig)
+			];
+
+		})()
 
 	],
 
@@ -71,15 +98,18 @@ const baseConfig = {
 					options: {
 						presets: [
 							[
-								"env",
+								"@babel/preset-env",
 								{
-									browsers: ["last 2 versions"],
+									targets: {
+										safari: "10",
+										chrome: "53"
+									},
 									modules : false
 								}
 							]
 						],
 						plugins: [
-							["transform-runtime"]
+							["@babel/plugin-transform-runtime"]
 						]
 					}
 				}
